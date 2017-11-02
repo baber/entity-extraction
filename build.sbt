@@ -1,5 +1,7 @@
 organization := "com.bk"
-scalaVersion := "2.12.3"
+scalaVersion := "2.11.11"
+name := "entity-extraction"
+
 
 libraryDependencies ++= Seq(
   "edu.stanford.nlp" % "stanford-corenlp" % "3.8.0",
@@ -8,3 +10,10 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.2.3",
   "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 )
+
+
+publishMavenStyle := false
+
+publishTo := {
+  Some(s3resolver.value("Snapshots bucket", s3("com.ee.bdec.coderepo")) withIvyPatterns)
+}
