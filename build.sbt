@@ -15,5 +15,5 @@ libraryDependencies ++= Seq(
 publishMavenStyle := false
 
 publishTo := {
-  Some(s3resolver.value("Snapshots bucket", s3("com.ee.bdec.coderepo")) withIvyPatterns)
+  Some(s3resolver.value("Snapshots bucket", s3("org.hmrc.ccg.radlab.coderepo")) withIvyPatterns)
 }
